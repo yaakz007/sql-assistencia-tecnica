@@ -155,3 +155,8 @@ SELECT COUNT(*) FROM clientes;
 SELECT * FROM pecas WHERE nome LIKE '%RTX%';
 
 SELECT * FROM pecas WHERE preco BETWEEN 200 AND 600;
+
+-- Tabela de teste: criada e apagada logo depois (DROP TABLE)
+CREATE TABLE teste (id INT PRIMARY KEY);
+
+DROP TABLE teste;
