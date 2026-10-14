@@ -105,3 +105,53 @@ WHERE nome = 'RTX 5070';
 -- Remove a peça Ryzen
 DELETE FROM pecas
 WHERE nome = 'Ryzen 7 5700x';
+
+-- Mais dados para as consultas
+INSERT INTO pecas (nome, preco, estoque)
+VALUES ('Bateria notebook 6 células', 180.00, 0);
+
+INSERT INTO pecas (nome, preco, estoque)
+VALUES ('SSD 480GB', 320.50, 12);
+
+INSERT INTO pecas (nome, preco, estoque)
+VALUES ('Memória RAM 8GB', 210.00, 7);
+
+INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
+VALUES (1, 'Troca de bateria do notebook', 180.00, '2026-10-12');
+
+INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
+VALUES (4, 'Formatação e instalação de SSD', 350.00, '2026-10-13');
+
+INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
+VALUES (3, 'Limpeza e troca de pasta térmica', 120.00, '2026-10-09');
+
+-- Peças com preço acima de 300
+SELECT * FROM pecas WHERE preco > 300;
+
+-- Ordens que mencionam "notebook"
+SELECT * FROM ordens_servico WHERE descricao LIKE '%notebook%';
+
+-- Ordens entre duas datas
+SELECT * FROM ordens_servico
+WHERE data_entrada BETWEEN '2026-10-09' AND '2026-10-12';
+
+-- Mais exemplos com SELECT
+SELECT * FROM pecas WHERE estoque = 0;
+
+SELECT * FROM clientes WHERE cidade = 'Blumenau';
+
+SELECT * FROM ordens_servico ORDER BY valor DESC;
+
+SELECT COUNT(*) FROM ordens_servico;
+
+SELECT COUNT(*) FROM ordens_servico WHERE cliente_id = 1;
+
+SELECT DISTINCT cidade FROM clientes;
+
+SELECT * FROM pecas ORDER BY preco DESC;
+
+SELECT COUNT(*) FROM clientes;
+
+SELECT * FROM pecas WHERE nome LIKE '%RTX%';
+
+SELECT * FROM pecas WHERE preco BETWEEN 200 AND 600;
