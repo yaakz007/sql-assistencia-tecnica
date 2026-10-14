@@ -69,3 +69,9 @@ VALUES ('Tela 15.6 polegadas', 450.00, 5);
 -- Dados de exemplo: ordens de serviço
 INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
 VALUES (1, 'Troca de tela do notebook', 600.00, '2026-10-10');
+
+INSERT INTO pecas (nome, preco, estoque)
+VALUES ('RTX 5070', 8570.00, 2);
+
+INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
+VALUES (3, 'Instalação placa de vídeo', 50.00, '2026-10-08');
