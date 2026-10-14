@@ -66,12 +66,42 @@ VALUES ('Camila Rodrigues', 'Pomerode', '47999990010');
 INSERT INTO pecas (nome, preco, estoque)
 VALUES ('Tela 15.6 polegadas', 450.00, 5);
 
+INSERT INTO pecas (nome, preco, estoque)
+VALUES ('RTX 5070', 8570.00, 2);
+
+INSERT INTO pecas (nome, preco, estoque)
+VALUES ('Ryzen 7 5700x', 2500.00, 5);
+
 -- Dados de exemplo: ordens de serviço
 INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
 VALUES (1, 'Troca de tela do notebook', 600.00, '2026-10-10');
 
-INSERT INTO pecas (nome, preco, estoque)
-VALUES ('RTX 5070', 8570.00, 2);
-
 INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
 VALUES (3, 'Instalação placa de vídeo', 50.00, '2026-10-08');
+
+-- Ordem de teste que será cancelada
+INSERT INTO ordens_servico (cliente_id, descricao, valor, data_entrada)
+VALUES (2, 'Orçamento cancelado', 0.00, '2026-10-14');
+
+-- Cliente mudou de telefone
+UPDATE clientes
+SET telefone = '47988880001'
+WHERE id = 1;
+
+-- Remove a ordem de serviço cancelada
+DELETE FROM ordens_servico
+WHERE id = 3;
+
+-- Atualiza o preço da tela
+UPDATE pecas
+SET preco = 550.00
+WHERE id = 1;
+
+-- Atualiza preço e estoque da RTX (duas colunas de uma vez)
+UPDATE pecas
+SET preco = 9100.00, estoque = 1
+WHERE nome = 'RTX 5070';
+
+-- Remove a peça Ryzen
+DELETE FROM pecas
+WHERE nome = 'Ryzen 7 5700x';
