@@ -39,7 +39,7 @@ INSERT INTO clientes (nome, cidade, telefone)
 VALUES ('João Pereira', 'Gaspar', '47999990002');
 
 INSERT INTO clientes (nome, cidade, telefone)
-VALUES ('Lucas Gabriel', 'Dubai', '47999990003');
+VALUES ('Lucas Gabriel', 'Blumenau', '47999990003');
 
 INSERT INTO clientes (nome, cidade, telefone)
 VALUES ('Ana Souza', 'Indaial', '47999990004');
@@ -160,3 +160,7 @@ SELECT * FROM pecas WHERE preco BETWEEN 200 AND 600;
 CREATE TABLE teste (id INT PRIMARY KEY);
 
 DROP TABLE teste;
+
+SELECT c.nome, o.descricao, o.valor
+FROM ordens_servico o
+JOIN clientes c ON c.id = o.cliente_id;
